@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>zoom on scroll effect</title>
+    <meta charset="utf-8">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet"> 
+    <style>
+    	html,body{
+    		margin:0;
+    		padding:0;
+    		background:#2C2F34;
+            font-family: 'Mukta', sans-serif;;
+    	}
+
+    	
+
+    	.hero-back{
+    		width:100%;
+    		height:100vh;
+    		background-image: url(sky.jpg);
+    		background-repeat:no-repeat;
+    		background-size:cover;
+    		
+            display:grid;
+            grid-template-columns:20% 20% 20% 20% 20%;
+            grid-template-rows: 20% 20% 20% 20% 20%;
+    	} 
+
+    	
+
+    	
+
+    	.hero-back>img{
+    		height:320px;
+    		position:absolute;
+    		top:400px;
+    		bottom:0;
+    		left:0;
+    		right:0;
+    		margin:auto;
+    		animation:wind 5s cubic-bezier(.47,0,.74,.71) infinite alternate; infinite alternate;
+    		
+
+    	}
+
+    	
+
+    	
+    	@keyframes wind{
+    		from{
+    			transform: rotate(-10deg);
+    		}
+    		to{
+    			transform: rotate(+10deg);
+    		}
+    	}
+
+
+
+    	#cv{
+            height:100vh;
+            background-color:#2c2f34;
+            
+        }
+
+        #outro{
+            height:100vh;
+            background-color:#2c2f34;;
+            display:grid;
+            grid-template-rows:50% 50%;
+            grid-template-columns:25% 25% 25% 25%;
+
+        }
+
+    	
+        #menu{
+            width:100%;
+            height:70px;
+            background-color:#627087;
+            position:fixed;
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+        }
+
+        #menu p{
+            
+            font-size:15px;
+            color:#e6eaf2;
+            cursor: url(mickk.png),pointer;
+            transition: font-size 3s linear;
+        }
+
+        #menu p:hover{
+            color:yellow;
+            font-weight:bolder;
+            font-size:20px;
+
+        }
+
+
+
+        #outro>div{
+            height:100%;
+            padding-bottom:4px;
+            width:100%;
+            padding-top:10px;
+            grid-row-start:2;
+            grid-column:1/span 4;
+            background-image:url("vuearienne.jpg");
+            background-size:cover;
+            background-attachment:fixed;
+        }
+
+      
+
+        #outro img{
+            grid-row-start:1;
+            height:400px;
+            width:400px;
+            border-radius:100px;
+            
+            margin:auto;
+            padding:auto;
+            display:grid;
+        }
+
+        #cv p{
+            margin:0;
+            padding:200px;
+            line-height:50px;
+            font-size:20px;
+            color:white;
+        }
+
+        #cv p a{
+            text-decoration:none;
+            color:white;
+            font-size:20px;
+        }
+
+        #cv p a:hover{
+            color:red;
+            text-decoration:underline;
+            cursor: url(mickk.png),pointer;
+        }
+
+        th,td{
+            border:solid 1px black;
+
+        }
+
+        table{
+            margin:auto;
+            color:white;
+        }
+
+        td{
+            padding:7px;
+        }
+
+    </style>
+</head>
+<body>
+	<div id="menu">
+     <p>ACCEUIL</p>
+     <p>PRESENTATION</p>
+     <p>CE QUE J'AI APPRIS A LA 3WA</p>   
+    </div>
+	<div class="hero-back">
+		
+	
+		<span id="content">
+			
+		</span>
+		<img src="newballon.png">
+		
+		
+	</div>
+	<div id="cv">
+    	<p>
+            NOM : MUSETTI<br>
+            PRENOM : XAVIER<br>
+            DATE DE NAISSANCE : 26 avril 1994<br>
+            <a href="mailto:xaviermusetti@outlook.fr">MAIL : xaviermusetti@outlook.fr</a><br>
+            OBJECTIF : je recherche une entreprise acceptant de prendre des debutants pour parfaire mes notions en web developement 
+            
+        </p> 
+        <table>
+
+           <tr>
+
+               <th>2013/2014</th>
+               <th>2014/2015</th>
+               <th>2015/2016</th>
+               <th>2016/2017</th>
+               <th>2017/2018</th>
+
+           </tr>
+
+           
+           <tr>
+                <!-- 2013/2014 -->
+               <td>
+                   BACCALAUREAT ES option math
+               </td>
+               <!-- 2014/2015 -->
+               <td>
+                   1er année faculté de droit de la rochelle
+               </td>
+               <!-- 2015/2016 -->
+               <td>
+                   2eme années faculté de droit de la rochelle
+               </td>
+               <!-- 2016/2017 -->
+               <td>
+                   année de césure
+               </td>
+                <!-- 2017/2018 -->
+               <td>
+                   employé polyvalent à mcdonald's<br>
+                   formation de 3 mois en web developement à la 3WA
+               </td>
+
+            </tr>
+       
+           
+
+    </table> 
+	</div>
+    <div id="outro">
+      <img src="html5.png">
+      <img src="css3.png">
+      <img src="js.png">
+      <img src="phpsql.png">
+      <div></div>
+    </div>
+	
+	<script type="text/javascript">
+	
+
+       
+         $("body").css("display", "none");
+      
+        $("body").fadeIn(7000);
+			
+	   //***AUTOSCROLLING***************************************************************************************//
+
+         $('#menu p:nth-child(2)').click(function(){
+
+            $('html, body').animate({
+            scrollTop: $("#cv").offset().top
+            },4000);
+        })
+
+         $('#menu p:nth-child(3)').click(function(){
+            $('html, body').animate({
+            scrollTop: 1870
+            },4000);
+        })
+
+         $('#menu p:first').click(function(){
+            $('html, body').animate({
+            scrollTop: 0
+            },4000);
+        })
+        //*****************************************************************************************************//
+
+
+         $(window).scroll(()=>{
+            wScroll = $(this).scrollTop();
+            wScrollcoef = wScroll*0.1;
+            $(".hero-back").css({
+                "background-size":100+wScrollcoef+"%"
+            })
+
+            $(".hero-back img").css({
+                "top":wScroll+"px"
+            })
+         })
+		
+
+		
+
+        
+			
+
+		
+	</script>
+	
+</body>
+</html>
